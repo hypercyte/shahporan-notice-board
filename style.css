@@ -1,0 +1,16 @@
+body {
+    background-color: 
+    #000000;
+    color:white;
+}
+
+video {
+    padding-top: 9rem;
+    padding-left: auto;
+}
+
+table {
+    position: absolute;
+    top: 20px;
+    right: 60px;
+}

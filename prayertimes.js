@@ -86,3 +86,8 @@ fs.readFile(path, 'utf-8', (err, d) => {
 const newfun = () => {
     console.log(resultMap.get(date));
 }
+
+window.onload = function() {
+    document.getElementById("fajr_start").innerHTML=resultMap.get(date).fajr_begin;
+    document.getElementById("fajr_congr").innerHTML=resultMap.get(date).fajr_jamaah;
+} 
