@@ -1,6 +1,6 @@
 body {
     background-color: 
-    #000000;
+    #266e4b;
     color:white;
 }
 
@@ -13,4 +13,8 @@ table {
     position: absolute;
     top: 20px;
     right: 60px;
+    border-spacing: 20px;
+    border-collapse: separate;
+    font-size: 20px;
+    font-family: 'Calibri', Arial, Helvetica, sans-serif
 }

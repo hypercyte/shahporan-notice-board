@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shahporan Notice Board</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    </head>
+    <body>
+        <video width="1400" height="787.5
+        " autoplay loop muted>
+            <source src="slides.mp4" type="video/mp4" />
+            Your browser does not support the video element.
+        </video>
+
+        <p><%= locals.dateToday %></p>
+        <table>
+            <tr>
+              <th></th>
+              <th>Start</th>
+              <th>Jama'ah</th>
+            </tr>
+            <tr>
+              <td><strong>Fajr</strong></td>
+              <td><%= locals.fajr_begin %></td>
+              <td><%= locals.fajr_jamaah %></td>
+            </tr>
+            <tr>
+                <td><strong>Dhuhr</strong></td>
+                <td><%= locals.dhuhr_begin %></td>
+                <td><%= locals.dhuhr_jamaah %></td>
+            </tr>
+            <tr>
+                <td><strong>'Asr'</strong></td>
+                <td><%= locals.asr_begin %></td>
+                <td><%= locals.asr_jamaah %></td>
+            </tr>
+            <tr>
+                <td><strong>Maghrib</strong></td>
+                <td><%= locals.maghrib_begin %></td>
+                <td><%= locals.maghrib_jamaah %></td>
+            </tr>
+            <tr>
+                <td><strong>'Ishā'</strong></td>
+                <td><%= locals.isha_begin %></td>
+                <td><%= locals.isha_jamaah %></td>
+            </tr>
+          </table>
+    </body>
+</html>

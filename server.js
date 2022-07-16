@@ -1,5 +1,46 @@
+const { Console } = require('console');
+const express = require('express');
+const app = express();
+//const prayertimes = require('./public/js/prayertimes.js');
+
+
+app.set('view enginer', 'ejs');
+
+app.use(express.static(__dirname + '/public'));
+
+app.get('/play', (req, res) => {
+    res.render("index.ejs", {
+        dateToday: date,
+        fajr_begin: resultMap.get(date).fajr_begin,
+        dhuhr_begin: resultMap.get(date).dhuhr_begin,
+        asr_begin: resultMap.get(date).asr_begin_2,
+        maghrib_begin: resultMap.get(date).maghrib_begin,
+        isha_begin: resultMap.get(date).isha_begin,
+        fajr_jamaah: resultMap.get(date).fajr_jamaah,
+        dhuhr_jamaah: resultMap.get(date).dhuhr_jamaah,
+        asr_jamaah: resultMap.get(date).asr_jamaah,
+        maghrib_jamaah: resultMap.get(date).maghrib_jamaah,
+        isha_jamaah: resultMap.get(date).isha_jamaah,
+    });
+});
+
+app.get('/', (req, res) => {
+    res.send("Loading...");
+});
+
+app.listen(3000);
+
+
+
+
+
+
+
+
+
+
 const fs = require('fs'); // Require filesystem
-const path = __dirname + "\\prayerdata_2022.csv"; // Find path of data
+const path = __dirname + "\\public\\js\\prayerdata_2022.csv"; // Find path of data
 
 let result; // Result for CSV conversion
 const resultMap = new Map(); // Map of prayer times by date key
@@ -80,14 +121,10 @@ fs.readFile(path, 'utf-8', (err, d) => {
                     })
     });
 
-    newfun();
+    printPrayerTimes();
 });
 
-const newfun = () => {
+const printPrayerTimes = () => {
     console.log(resultMap.get(date));
+    console.log("Prayer times successfully loaded.")
 }
-
-window.onload = function() {
-    document.getElementById("fajr_start").innerHTML=resultMap.get(date).fajr_begin;
-    document.getElementById("fajr_congr").innerHTML=resultMap.get(date).fajr_jamaah;
-} 
